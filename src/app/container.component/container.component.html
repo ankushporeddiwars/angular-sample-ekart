@@ -1,0 +1,59 @@
+<!-- <p>Name: {{name}}</p>
+<p>Price: ${{price}}</p>
+<p>Color: {{color}}</p>
+<p>Discounted Price: {{discountedPrice}}</p> -->
+
+<div class="ekart--container--container">
+
+    <!-- <img [src]=product.pImage>
+    <p>Name: {{product.name}}</p>
+    <p>Price: ${{product.price}}</p>
+    <p>Color: {{product.color}}</p> -->
+
+    <!-- <p>Discounted Price: {{product.price - (product.price * product.discount/100)}}</p> -->
+    <!-- toFixed(2) will show two decimal numbers -->
+    
+    <!-- <p>Discounted Price: {{ getDiscountedPrice().toFixed(2)}}</p>
+    <p>Stock:{{product.inStock>0 ? ' only ' + product.inStock + ' items left' :' stock is not available.' }}</p> -->
+    
+    <!-- <button [disabled]="!(product.inStock>0)" style="margin: 4px 2px;padding: 15px 32px;">Buy Now</button> -->
+    <!--bind keyword or [] bracjets both are for property  binding-->
+    <!-- <input bind-value="name"> -->
+    <!-- <input [value]="name" (input)="onNamechange($event)"><br> -->
+
+    <!-- <p>name:{{name}}</p>
+    <button (click)="onButtonRemove()">-</button>
+    <span>{{ addToCart }}</span>
+    <button (click)="onButtonadd()">+</button> -->
+
+  <!-- we are strat actuall app. from here -->
+<app-search (searchTextChanged)="SetSearchText($event)"></app-search>
+   <!-- <div *ngFor="let item of [2,3,4,5,6,8]">
+       <p>Current element of array is : {{item}}</p>
+    </div> -->
+
+    <!-- <div *ngFor="let item of listofarray">
+      <p>Current element of array is : {{item}}</p>
+   </div> -->
+   <product-list [searchText]="searchTextValue" #productListComponent></product-list>
+   <product-detail *ngIf="productListComponent.selectedProduct" [productListComp]="productListComponent"></product-detail>
+</div>
+<div class="ekart-featured-products">
+   <div class="ekart-featured-products-heading">
+      <h1>Latest Arrival in Popular Brands</h1>
+</div>
+<featured-brand>
+   <!-- <h1 #Test>Test</h1> we had projected for content child -->
+   <h3 title #Test>New Arrivals in Nike</h3>
+   <button class="call-to-action">Show New Arrival in Nike</button>
+</featured-brand>
+<featured-brand>
+   <!-- <h1 #Test>Test</h1> we had projected for content child -->
+   <h3 id="title">New Arrivals in Adidas</h3>
+   <button class="call-to-action">Show New Arrival in Adidas</button>
+</featured-brand>
+<featured-brand>
+   <!-- <h1 #Test>Test</h1> we had projected for content child -->
+   <h3 id="title">New Arrivals in Reebok</h3>
+   <button class="call-to-action">Show New Arrival in Reebok</button>
+</featured-brand>
